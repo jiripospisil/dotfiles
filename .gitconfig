@@ -1,0 +1,30 @@
+[giggle]
+  main-window-maximized = true
+  main-window-geometry = 0x0+0+0
+  history-view-vpane-position = 346
+  main-window-view = HistoryView
+  file-view-vpane-position = 298
+[user]
+  name = Jiri Pospisil
+  email = mekishizufu@gmail.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = cyan
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[http]
+  sslverify = true
+[merge]
+  defaultToUpstream = true
