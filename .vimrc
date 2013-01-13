@@ -64,6 +64,8 @@ map <Left> <nop>
 map <Right> <nop>
 map <Up> <nop>
 map <Down> <nop>
+map Q <nop>
+map K <nop>
 
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
