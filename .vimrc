@@ -91,3 +91,5 @@ set winheight=999
 
 map <C-BS> <esc>:wa<CR>
 imap <C-BS> <esc>:wa<CR>
+
+au BufWritePre *.rb :%s/\s\+$//e
