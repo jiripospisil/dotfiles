@@ -12,7 +12,7 @@
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/snipmate-snippets"]
 	path = .vim/bundle/snipmate-snippets
-	url = git://github.com/honza/snipmate-snippets.git
+	url = git://github.com/mekishizufu/snipmate-snippets.git
 [submodule ".vim/bundle/tcomment_vim"]
 	path = .vim/bundle/tcomment_vim
 	url = git://github.com/tomtom/tcomment_vim.git
