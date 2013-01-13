@@ -9,7 +9,10 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set t_Co=256
 set background=light
 colorscheme Tomorrow-Night
-set guioptions-=TmrL
+set guioptions-=T
+set guioptions-=m
+set guioptions-=r
+set guioptions-=L
 set guifont="bitstream vera sans"\ 9
 set number             
 
