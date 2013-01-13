@@ -82,6 +82,7 @@ map <leader>gl :CommandTFlush<CR>\|:CommandT lib<CR>
 map <leader>gp :CommandTFlush<CR>\|:CommandT public<CR>
 map <leader>gs :CommandTFlush<CR>\|:CommandT app/assets/stylesheets<CR>
 map <leader>gj :CommandTFlush<CR>\|:CommandT app/assets/javascripts<CR>
+map <leader>gt :CommandTFlush<CR>\|:CommandT spec<CR>
 nnoremap <leader><leader> <c-^>
 
 set winwidth=120
