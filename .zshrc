@@ -10,7 +10,7 @@ unsetopt correct_all
 export TERM="xterm-256color"
 export EDITOR="vim"
 
-alias go=gnome-open
+alias go="gnome-open"
 alias du="du -h"
 alias au="aunpack"
 alias ap="apack"
