@@ -12,6 +12,7 @@ export EDITOR='vim'
 
 alias go=gnome-open
 alias du='du -h'
+alias ax="atool -x"
 
 alias be="bundle exec"
 alias bi="bundle install"
