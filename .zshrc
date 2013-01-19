@@ -15,6 +15,7 @@ alias du="du -h"
 alias au="aunpack"
 alias ap="apack"
 alias al="als"
+alias s="l"
 
 alias be="bundle exec"
 alias bi="bundle install"
