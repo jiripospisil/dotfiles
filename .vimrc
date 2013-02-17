@@ -83,6 +83,13 @@ map <leader>gp :CommandTFlush<CR>\|:CommandT public<CR>
 map <leader>gs :CommandTFlush<CR>\|:CommandT app/assets/stylesheets<CR>
 map <leader>gj :CommandTFlush<CR>\|:CommandT app/assets/javascripts<CR>
 map <leader>gt :CommandTFlush<CR>\|:CommandT spec<CR>
+
+map <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
+map <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
+map <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
+map <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
+map <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
+
 nnoremap <leader><leader> <c-^>
 
 set winwidth=120
