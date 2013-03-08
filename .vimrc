@@ -100,4 +100,4 @@ set winheight=999
 map <C-BS> <esc>:wa<CR>
 imap <C-BS> <esc>:wa<CR>
 
-au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml :%s/\s\+$//e
+au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp :%s/\s\+$//e
