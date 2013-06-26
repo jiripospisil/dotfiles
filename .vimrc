@@ -100,7 +100,7 @@ set winheight=999
 map <C-BS> <esc>:wa<CR>
 imap <C-BS> <esc>:wa<CR>
 
-au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp :%s/\s\+$//e
+au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem :%s/\s\+$//e
 
 " http://blog.sanctum.geek.nz/vim-command-typos/
 if has("user_commands")
@@ -114,3 +114,5 @@ if has("user_commands")
   command! -bang QA qa<bang>
   command! -bang Qa qa<bang>
 endif
+
+set formatoptions-=or
