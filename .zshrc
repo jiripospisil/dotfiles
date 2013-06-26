@@ -17,6 +17,7 @@ alias ap="apack"
 alias al="als"
 alias l="ls -lah"
 alias s="l"
+alias c="cd"
 alias ht="htop"
 
 alias be="bundle exec"
