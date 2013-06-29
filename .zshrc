@@ -9,6 +9,7 @@ unsetopt correct_all
 
 export TERM="xterm-256color"
 export EDITOR="vim"
+export PATH=~/Local/bin:$PATH
 
 alias go="gnome-open"
 alias du="du -h"
