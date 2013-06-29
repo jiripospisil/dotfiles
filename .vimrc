@@ -102,6 +102,9 @@ set winheight=999
 map <C-BS> <esc>:wa<CR>
 imap <C-BS> <esc>:wa<CR>
 
+map <C-M-BS> <esc>:wq<CR>
+imap <C-M-BS> <esc>:wq<CR>
+
 au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem :%s/\s\+$//e
 
 " http://blog.sanctum.geek.nz/vim-command-typos/
