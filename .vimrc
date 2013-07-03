@@ -14,6 +14,7 @@ set guioptions-=m
 set guioptions-=r
 set guioptions-=L
 set guifont="bitstream vera sans"\ 9
+highlight Cursor guifg=white guibg=#CC0033
 set number             
 
 let mapleader = ","
