@@ -10,8 +10,11 @@ unsetopt correct_all
 export TERM="xterm-256color"
 export EDITOR="vim"
 export PATH=~/Local/bin:$PATH
+export GOROOT=~/Apps/go
+export PATH=$GOROOT/bin:$PATH
 
 alias go="gnome-open"
+alias goo="command go"
 alias du="du -h"
 alias au="aunpack"
 alias ap="apack"
