@@ -1,4 +1,8 @@
 " Shamelessly gathered from all over the internet
+" 
+" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+" https://github.com/r00k/dotfiles/blob/master/vimrc
+" https://github.com/dmajda/dotfiles/blob/master/.vimrc
 
 set nocompatible 
 call pathogen#infect()
