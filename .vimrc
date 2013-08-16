@@ -40,6 +40,7 @@ set expandtab
 set smarttab
 set tabstop=2
 set shiftwidth=2
+set backspace=2
 
 set dictionary=/usr/share/dict/words
 
