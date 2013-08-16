@@ -34,6 +34,9 @@ set autoread
 set hidden
 set scrolloff=2
 set nobackup
+set nofoldenable
+set shiftround
+set timeoutlen=500
 
 set nowrap
 set textwidth=80
@@ -80,24 +83,35 @@ cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 map <leader>v :view %%
 
-map <leader>f :CommandTFlush<CR>\|:CommandT<CR>
-map <leader>gf :CommandTFlush<CR>\|:CommandT %%<CR>
+map <leader>f :CommandT<CR>
+map <leader>gf :CommandT %%<CR>
 
-map <leader>gv :CommandTFlush<CR>\|:CommandT app/views<CR>
-map <leader>gc :CommandTFlush<CR>\|:CommandT app/controllers<CR>
-map <leader>gm :CommandTFlush<CR>\|:CommandT app/models<CR>
-map <leader>gh :CommandTFlush<CR>\|:CommandT app/helpers<CR>
-map <leader>gl :CommandTFlush<CR>\|:CommandT lib<CR>
-map <leader>gp :CommandTFlush<CR>\|:CommandT public<CR>
-map <leader>gs :CommandTFlush<CR>\|:CommandT app/assets/stylesheets<CR>
-map <leader>gj :CommandTFlush<CR>\|:CommandT app/assets/javascripts<CR>
-map <leader>gt :CommandTFlush<CR>\|:CommandT spec<CR>
+map <leader>gv :CommandT app/views<CR>
+map <leader>gc :CommandT app/controllers<CR>
+map <leader>gm :CommandT app/models<CR>
+map <leader>gh :CommandT app/helpers<CR>
+map <leader>gl :CommandT lib<CR>
+map <leader>gp :CommandT public<CR>
+map <leader>gs :CommandT app/assets/stylesheets<CR>
+map <leader>gj :CommandT app/assets/javascripts<CR>
+map <leader>gt :CommandT spec<CR>
 
-map <leader>da :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
-map <leader>dv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
-map <leader>dc :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
-map <leader>dr :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
-map <leader>dm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
+map <leader>da :CommandT app/assets/javascripts/templates<cr>
+map <leader>dv :CommandT app/assets/javascripts/views<cr>
+map <leader>dc :CommandT app/assets/javascripts/controllers<cr>
+map <leader>dr :CommandT app/assets/javascripts/routes<cr>
+map <leader>dm :CommandT app/assets/javascripts/models<cr>
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>m :call RenameFile()<cr>
 
 nnoremap <leader><leader> <c-^>
 
