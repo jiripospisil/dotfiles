@@ -52,6 +52,6 @@ alias gap="git add -p"
 alias gmf="git merge --ff-only"
 alias gup="git smart-pull"
 
-alias gi=/home/tux/Apps/vim74/bin/gvim
+alias gi=/home/tux/Apps/vim-11272013/bin/gvim
 
 stty -ixon -ixoff
