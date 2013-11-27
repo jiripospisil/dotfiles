@@ -59,15 +59,6 @@ set incsearch
 set ignorecase
 nnoremap <CR> :nohlsearch<CR>/<BS>
 
-nmap <C-S-tab> :tabprevious<CR>
-nmap <C-tab> :tabnext<CR>
-map <C-S-tab> :tabprevious<CR>
-map <C-tab> :tabnext<CR>
-imap <C-S-tab> <Esc>:tabprevious<CR>i
-imap <C-tab> <Esc>:tabnext<CR>i
-nmap <C-t> :tabnew<CR>
-imap <C-t> <Esc>:tabnew<CR>
-
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -129,7 +120,7 @@ imap <C-BS> <esc>:wa<CR>
 map <C-M-BS> <esc>:wq<CR>
 imap <C-M-BS> <esc>:wq<CR>
 
-au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md :%s/\s\+$//e
+au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.hpp :%s/\s\+$//e
 
 " http://blog.sanctum.geek.nz/vim-command-typos/
 if has("user_commands")
