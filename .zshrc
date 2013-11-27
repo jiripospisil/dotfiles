@@ -32,6 +32,7 @@ alias l="ls -lah"
 alias s="l"
 alias c="cd"
 alias ht="htop"
+alias ni="ninja"
 
 alias be="bundle exec"
 alias bi="bundle install"
