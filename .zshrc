@@ -12,6 +12,15 @@ export EDITOR="vim"
 export PATH=~/Local/bin:$PATH
 export GOROOT=~/Apps/go
 export PATH=$GOROOT/bin:$PATH
+export PATH=~/Apps/gradle-1.7/bin:$PATH
+export PATH=~/Apps/sbt/bin:$PATH
+export PATH=~/Apps/clang-tip-new/bin:$PATH
+export PATH=~/Apps/ninja-tip:$PATH
+export PATH=~/Apps/leiningen:$PATH
+export PATH=~/Apps/dmd2/linux/bin64/:$PATH
+export PATH=~/Apps/rust-0.8/bin:$PATH
+export PATH=~/Apps/scala-2.10.3/bin:$PATH
+export PATH=~/Apps/play-2.2.1:$PATH
 
 alias go="gnome-open"
 alias goo="command go"
