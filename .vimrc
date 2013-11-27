@@ -9,6 +9,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ctrlp_match_window = "order:ttb"
 
 set t_Co=256
 set background=light
@@ -83,24 +84,26 @@ cnoremap %% <C-R>=expand('%:h').'/'<CR>
 map <leader>e :edit %%
 map <leader>v :view %%
 
-map <leader>f :CommandT<CR>
-map <leader>gf :CommandT %%<CR>
+map <leader>f :CtrlP <CR>
+map <leader>gf :CtrlP %%<CR>
+map <leader>b :CtrlPBuffer <CR>
+map <leader>t :CtrlPTag <CR>
 
-map <leader>gv :CommandT app/views<CR>
-map <leader>gc :CommandT app/controllers<CR>
-map <leader>gm :CommandT app/models<CR>
-map <leader>gh :CommandT app/helpers<CR>
-map <leader>gl :CommandT lib<CR>
-map <leader>gp :CommandT public<CR>
-map <leader>gs :CommandT app/assets/stylesheets<CR>
-map <leader>gj :CommandT app/assets/javascripts<CR>
-map <leader>gt :CommandT spec<CR>
+map <leader>gv :CtrlP  app/views<CR>
+map <leader>gc :CtrlP  app/controllers<CR>
+map <leader>gm :CtrlP  app/models<CR>
+map <leader>gh :CtrlP  app/helpers<CR>
+map <leader>gl :CtrlP  lib<CR>
+map <leader>gp :CtrlP  public<CR>
+map <leader>gs :CtrlP  app/assets/stylesheets<CR>
+map <leader>gj :CtrlP  app/assets/javascripts<CR>
+map <leader>gt :CtrlP  spec<CR>
 
-map <leader>da :CommandT app/assets/javascripts/templates<cr>
-map <leader>dv :CommandT app/assets/javascripts/views<cr>
-map <leader>dc :CommandT app/assets/javascripts/controllers<cr>
-map <leader>dr :CommandT app/assets/javascripts/routes<cr>
-map <leader>dm :CommandT app/assets/javascripts/models<cr>
+map <leader>da :CtrlP  app/assets/javascripts/templates<cr>
+map <leader>dv :CtrlP  app/assets/javascripts/views<cr>
+map <leader>dc :CtrlP  app/assets/javascripts/controllers<cr>
+map <leader>dr :CtrlP  app/assets/javascripts/routes<cr>
+map <leader>dm :CtrlP  app/assets/javascripts/models<cr>
 
 function! RenameFile()
     let old_name = expand('%')
