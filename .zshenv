@@ -24,3 +24,7 @@ unmark() {
 marks() {
   ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
+
+ttp() {
+  take /tmp/tp-$(date +%Y%m%d%H%M)
+}
