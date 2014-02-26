@@ -10,6 +10,7 @@ syntax on
 filetype plugin indent on
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:ctrlp_match_window = "order:ttb"
+let g:html_indent_inctags = "html,body,head,tbody,p,script"
 
 set t_Co=256
 set background=light
@@ -34,7 +35,7 @@ set pastetoggle=<F5>
 set autoread
 set hidden
 set scrolloff=2
-set nobackup
+set backupdir=~/.vim/backup
 set nofoldenable
 set shiftround
 set timeoutlen=500
@@ -49,6 +50,7 @@ set smarttab
 set tabstop=2
 set shiftwidth=2
 set backspace=2
+" set virtualedit=all
 
 set dictionary=/usr/share/dict/words
 
@@ -96,6 +98,8 @@ map <leader>dc :CtrlP  app/assets/javascripts/controllers<cr>
 map <leader>dr :CtrlP  app/assets/javascripts/routes<cr>
 map <leader>dm :CtrlP  app/assets/javascripts/models<cr>
 
+nmap <leader>s :Ack<space>
+
 function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
@@ -114,10 +118,10 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
-map <C-BS> <esc>:wa<CR>
+nmap <C-BS> :wa<CR>
 imap <C-BS> <esc>:wa<CR>
 
-map <C-M-BS> <esc>:wq<CR>
+nmap <C-M-BS> :wq<CR>
 imap <C-M-BS> <esc>:wq<CR>
 
 au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.hpp :%s/\s\+$//e
