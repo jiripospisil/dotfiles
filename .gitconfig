@@ -24,3 +24,5 @@
   defaultToUpstream = true
 [web]
   browser = google-chrome
+[push]
+	default = simple
