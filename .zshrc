@@ -14,13 +14,18 @@ export GOROOT=~/Apps/go
 export PATH=$GOROOT/bin:$PATH
 export PATH=~/Apps/gradle-1.7/bin:$PATH
 export PATH=~/Apps/sbt/bin:$PATH
-export PATH=~/Apps/clang-tip-new/bin:$PATH
+export PATH=~/Apps/clang-llvm-3.4/bin:$PATH
 export PATH=~/Apps/ninja-tip:$PATH
 export PATH=~/Apps/leiningen:$PATH
-export PATH=~/Apps/dmd2/linux/bin64/:$PATH
-export PATH=~/Apps/rust-0.8/bin:$PATH
 export PATH=~/Apps/scala-2.10.3/bin:$PATH
-export PATH=~/Apps/play-2.2.1:$PATH
+export PATH=~/Apps/apache-maven-3.1.1/bin:$PATH
+export PATH=~/Apps/apache-ant-1.9.2/bin:$PATH
+export PATH=~/Apps/silver-searcher-0.18.1/bin:$PATH
+export PATH=~/Apps/vlc-tip/bin:$PATH
+export PATH=~/Apps/couchdb-1.5/bin:$PATH
+export PATH=~/Apps/elasticsearch-0.90.10/bin:$PATH
+
+export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
 alias go="gnome-open"
 alias goo="command go"
@@ -51,7 +56,10 @@ alias gun="git ls-files --other --exclude-standard"
 alias gap="git add -p"
 alias gmf="git merge --ff-only"
 alias gup="git smart-pull"
+alias gc="git clone"
+alias gcom="git commit -v"
 
-alias gi=/home/tux/Apps/vim-11272013/bin/gvim
+alias gi=/home/tux/Apps/vim-01202014/bin/gvim
+alias gii="gi -u .vimrc"
 
 stty -ixon -ixoff
