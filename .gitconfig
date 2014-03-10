@@ -26,3 +26,7 @@
 	browser = google-chrome
 [push]
 	default = simple
+[alias]
+	fx = !sh -c 'git commit --fixup=$1' -
+	sq = !sh -c 'git commit --squash=$1' -
+	ri = rebase --interactive --autosquash
