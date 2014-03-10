@@ -60,6 +60,6 @@ alias gc="git clone"
 alias gcom="git commit -v"
 
 alias gi=/home/tux/Apps/vim-01202014/bin/gvim
-alias gii="gi -u .vimrc"
+alias gii="gi -u ~/.vimrc_tabs"
 
 stty -ixon -ixoff
