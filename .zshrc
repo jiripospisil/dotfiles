@@ -60,7 +60,7 @@ alias gup="git smart-pull"
 alias gc="git clone"
 alias gcom="git commit -v"
 
-alias gi=/home/tux/Apps/vim-01202014/bin/gvim
+alias gi=/home/tux/Apps/vim-03072014/bin/gvim
 alias gii="gi -u ~/.vimrc_tabs"
 
 stty -ixon -ixoff
