@@ -25,6 +25,7 @@ export PATH=~/Apps/vlc-tip/bin:$PATH
 export PATH=~/Apps/couchdb-1.5/bin:$PATH
 export PATH=~/Apps/elasticsearch-0.90.10/bin:$PATH
 export PATH=~/Apps/sdl2-2.0.1/bin:$PATH
+export PATH=~/Apps/vala-tip/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
@@ -60,7 +61,7 @@ alias gup="git smart-pull"
 alias gc="git clone"
 alias gcom="git commit -v"
 
-alias gi=/home/tux/Apps/vim-03072014/bin/gvim
+alias gi=/home/tux/Apps/vim-03202014/bin/gvim
 alias gii="gi -u ~/.vimrc_tabs"
 
 stty -ixon -ixoff
