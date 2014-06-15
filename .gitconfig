@@ -30,3 +30,5 @@
 	fx = !sh -c 'git commit --fixup=$1' -
 	sq = !sh -c 'git commit --squash=$1' -
 	ri = rebase --interactive --autosquash
+[browser "google-chrome"]
+	path = /usr/bin/google-chrome-beta
