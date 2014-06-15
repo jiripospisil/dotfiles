@@ -26,5 +26,5 @@ marks() {
 }
 
 ttp() {
-  take /tmp/tp-$(date +%Y%m%d%H%M)
+  take /tmp/tp-$(date +%Y%m%d%H%M%S)
 }
