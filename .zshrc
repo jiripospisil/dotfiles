@@ -21,11 +21,10 @@ export PATH=~/Apps/scala-2.10.3/bin:$PATH
 export PATH=~/Apps/apache-maven-3.1.1/bin:$PATH
 export PATH=~/Apps/apache-ant-1.9.2/bin:$PATH
 export PATH=~/Apps/silver-searcher-0.20.0pre:$PATH
-export PATH=~/Apps/vlc-tip/bin:$PATH
-export PATH=~/Apps/couchdb-1.5/bin:$PATH
-export PATH=~/Apps/elasticsearch-0.90.10/bin:$PATH
-export PATH=~/Apps/sdl2-2.0.1/bin:$PATH
-export PATH=~/Apps/vala-tip/bin:$PATH
+export PATH=~/Apps/vlc-2.1.4/bin:$PATH
+export PATH=~/Apps/dmd2/linux/bin64:$PATH
+export PATH=~/Apps/gpefttools-2.1/bin:$PATH
+export PATH=~/Apps/cmake-2.8.12.2/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
@@ -61,7 +60,7 @@ alias gup="git smart-pull"
 alias gc="git clone"
 alias gcom="git commit -v"
 
-alias gi=/home/tux/Apps/vim-03202014/bin/gvim
+alias gi=/home/tux/Apps/vim-20140615/bin/gvim
 alias gii="gi -u ~/.vimrc_tabs"
 
 stty -ixon -ixoff
