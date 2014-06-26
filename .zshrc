@@ -16,7 +16,7 @@ export PATH=~/Apps/gradle-1.7/bin:$PATH
 export PATH=~/Apps/sbt/bin:$PATH
 export PATH=~/Apps/clang-llvm-3.4/bin:$PATH
 export PATH=~/Apps/ninja-tip:$PATH
-export PATH=~/Apps/leiningen:$PATH
+export PATH=~/Apps/lein-2.4.2:$PATH
 export PATH=~/Apps/scala-2.10.3/bin:$PATH
 export PATH=~/Apps/apache-maven-3.1.1/bin:$PATH
 export PATH=~/Apps/apache-ant-1.9.2/bin:$PATH
@@ -25,6 +25,7 @@ export PATH=~/Apps/vlc-2.1.4/bin:$PATH
 export PATH=~/Apps/dmd2/linux/bin64:$PATH
 export PATH=~/Apps/gpefttools-2.1/bin:$PATH
 export PATH=~/Apps/cmake-2.8.12.2/bin:$PATH
+export PATH=~/Apps/rust-20140624/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
