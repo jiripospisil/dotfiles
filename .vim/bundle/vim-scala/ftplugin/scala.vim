@@ -1,9 +1,8 @@
-setlocal textwidth=140
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal expandtab
-setlocal formatoptions=tcqr
 setlocal commentstring=//%s
+let &l:include = '^\s*import'
+let &l:includeexpr = 'substitute(v:fname,"\\.","/","g")'
+setlocal path+=src/main/scala,src/test/scala
+setlocal suffixesadd=.scala
 
 set makeprg=sbt\ -Dsbt.log.noformat=true\ compile
 set efm=%E\ %#[error]\ %f:%l:\ %m,%C\ %#[error]\ %p^,%-C%.%#,%Z,
@@ -169,3 +168,27 @@ let g:tagbar_type_scala = {
       \ 'case class' : 'r'
     \ }
 \ }
+
+function! s:CreateOrExpression(keywords)
+  return '('.join(a:keywords, '|').')'
+endfunction
+
+function! s:NextSection(backwards)
+  if a:backwards
+    let dir = '?'
+  else
+    let dir = '/'
+  endif
+  let keywords = [ 'def', 'class', 'trait', 'object' ]
+  let keywordsOrExpression = s:CreateOrExpression(keywords)
+
+  let modifiers = [ 'public', 'private', 'private\[\w*\]', 'protected', 'abstract', 'case', 'override', 'implicit', 'final', 'sealed']
+  let modifierOrExpression = s:CreateOrExpression(modifiers)
+
+  let regex = '^ *('.modifierOrExpression.' )* *'.keywordsOrExpression."\r"
+  execute 'silent normal! ' . dir . '\v'.regex
+endfunction
+
+noremap <script> <buffer> <silent> ]] :call <SID>NextSection(0)<cr>
+
+noremap <script> <buffer> <silent> [[ :call <SID>NextSection(1)<cr>
