@@ -59,6 +59,8 @@ alias gap="git add -p"
 alias gmf="git merge --ff-only"
 alias gup="git smart-pull"
 alias gcl="git clone"
+alias gbd="git branch -d"
+alias gbD="git branch -D"
 
 alias gi=/home/tux/Apps/vim-20140615/bin/gvim
 alias gii="gi -u ~/.vimrc_tabs"
