@@ -139,6 +139,10 @@ imap <C-BS> <esc>:wa<CR>
 nmap <C-M-BS> :wq<CR>
 imap <C-M-BS> <esc>:wq<CR>
 
+map <C-e> :pyf ~/.dotfiles/clang-format.py<CR>
+imap <C-e> <ESC>:pyf ~/.dotfiles/clang-format.py<CR>i
+map <C-M-e> ggVG :pyf ~/.dotfiles/clang-format.py<CR>
+
 au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.hpp :%s/\s\+$//e
 
 " http://blog.sanctum.geek.nz/vim-command-typos/
