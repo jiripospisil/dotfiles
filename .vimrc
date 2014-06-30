@@ -128,7 +128,7 @@ map <leader>m :call RenameFile()<cr>
 
 nnoremap <leader><leader> <c-^>
 
-set winwidth=100
+set winwidth=120
 set winheight=5
 set winminheight=5
 set winheight=999
