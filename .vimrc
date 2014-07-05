@@ -139,9 +139,8 @@ imap <C-BS> <esc>:wa<CR>
 nmap <C-M-BS> :wq<CR>
 imap <C-M-BS> <esc>:wq<CR>
 
-map <C-e> :pyf ~/.dotfiles/clang-format.py<CR>
-imap <C-e> <ESC>:pyf ~/.dotfiles/clang-format.py<CR>i
-map <C-M-e> ggVG :pyf ~/.dotfiles/clang-format.py<CR>
+autocmd FileType c,cpp,objc nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
 
 au BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.hpp :%s/\s\+$//e
 
