@@ -142,6 +142,8 @@ imap <C-M-BS> <esc>:wq<CR>
 autocmd FileType c,cpp,objc nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
 
+autocmd BufNewFile,BufRead *.txt,*.md setlocal spell
+
 autocmd BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.hpp :%s/\s\+$//e
 
 " http://blog.sanctum.geek.nz/vim-command-typos/
