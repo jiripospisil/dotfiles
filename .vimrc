@@ -48,7 +48,7 @@ set showcmd
 set pastetoggle=<F5>
 set autoread
 set hidden
-set scrolloff=2
+set scrolloff=5
 set backupdir=~/.vim/backup
 set nofoldenable
 set shiftround
