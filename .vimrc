@@ -11,6 +11,10 @@ filetype plugin indent on
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:ctrlp_match_window = "order:ttb"
 let g:html_indent_inctags = "html,body,head,tbody,p,script"
+let g:clang_library_path = "/home/tux/Apps/clang-3.4.2/lib"
+let g:clang_user_options = "-std=c++11"
+let g:clang_auto_select = 2
+let g:clang_complete_auto = 0
 
 if !has('python')
   echo 'In order to use pymatcher plugin, you need +python compiled vim'
