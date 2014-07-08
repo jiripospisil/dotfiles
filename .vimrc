@@ -37,6 +37,7 @@ set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 highlight Cursor guifg=white guibg=#CC0033
 set number             
 set relativenumber
+set completeopt-=preview
 
 let mapleader = ","
 set wildmenu
