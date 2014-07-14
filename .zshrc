@@ -62,7 +62,7 @@ alias gcl="git clone"
 alias gbd="git branch -d"
 alias gbD="git branch -D"
 
-alias gi=/home/tux/Apps/vim-20140615/bin/gvim
+alias gi=/home/tux/Apps/vim-20140714/bin/gvim
 alias gii="gi -u ~/.vimrc_tabs"
 
 stty -ixon -ixoff
