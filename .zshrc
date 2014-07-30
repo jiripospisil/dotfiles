@@ -24,7 +24,7 @@ export PATH=~/Apps/silver-searcher-0.20.0pre:$PATH
 export PATH=~/Apps/vlc-2.1.4/bin:$PATH
 export PATH=~/Apps/dmd2/linux/bin64:$PATH
 export PATH=~/Apps/gpefttools-2.1/bin:$PATH
-export PATH=~/Apps/cmake-2.8.12.2/bin:$PATH
+export PATH=~/Apps/cmake-3.0.0/bin:$PATH
 export PATH=~/Apps/rust-nightly/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
