@@ -26,6 +26,7 @@ export PATH=~/Apps/dmd2/linux/bin64:$PATH
 export PATH=~/Apps/gpefttools-2.1/bin:$PATH
 export PATH=~/Apps/cmake-3.0.0/bin:$PATH
 export PATH=~/Apps/rust-nightly/bin:$PATH
+export PATH=~/Apps/tmux-1.9a/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
