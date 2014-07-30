@@ -31,13 +31,12 @@ if executable("ag")
 endif
 
 set t_Co=256
-set background=light
 colorscheme Tomorrow-Night-Bright
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
 set guioptions-=L
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+set guifont=Droid\ Sans\ Mono\ 11
 highlight Cursor guifg=white guibg=#CC0033
 set number             
 set relativenumber
