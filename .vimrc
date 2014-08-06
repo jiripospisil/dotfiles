@@ -36,7 +36,7 @@ set guioptions-=T
 set guioptions-=m
 set guioptions-=r
 set guioptions-=L
-set guifont=Source\ Code\ Pro\ Medium\ 12
+set guifont=DejaVu\ Sans\ Mono\ 11
 highlight Cursor guifg=white guibg=#CC0033
 set number             
 set relativenumber
