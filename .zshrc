@@ -61,6 +61,7 @@ alias gap="git add -p"
 alias gmf="git merge --ff-only"
 alias gup="git smart-pull"
 alias gcl="git clone"
+alias gcls="git clone --depth 1"
 alias gbd="git branch -d"
 alias gbD="git branch -D"
 
