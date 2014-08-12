@@ -7,7 +7,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
-export TERM="xterm-256color"
+if [[ $COLORTERM == "gnome-terminal" && $TERM =~ xterm.* ]]; then
+    export TERM=xterm-256color
+fi
+
 export EDITOR="vim"
 export PATH=~/Local/bin:$PATH
 export GOROOT=~/Apps/go

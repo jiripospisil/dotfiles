@@ -30,7 +30,6 @@ if executable("ag")
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 endif
 
-set t_Co=256
 colorscheme Tomorrow-Night-Bright
 set guioptions-=T
 set guioptions-=m
