@@ -3,7 +3,7 @@
 " Maintainer:   Patrick Walton <pcwalton@mozilla.com>
 " Maintainer:   Ben Blum <bblum@cs.cmu.edu>
 " Maintainer:   Chris Morgan <me@chrismorgan.info>
-" Last Change:  2014 Feb 27
+" Last Change:  July 18, 2014
 
 if version < 600
   syntax clear
@@ -26,8 +26,8 @@ syn keyword   rustKeyword     fn nextgroup=rustFuncName skipwhite skipempty
 syn keyword   rustKeyword     for in if impl let
 syn keyword   rustKeyword     loop once proc pub
 syn keyword   rustKeyword     return super
-syn keyword   rustKeyword     unsafe virtual while
-syn keyword   rustKeyword     use nextgroup=rustModPath skipwhite skipempty
+syn keyword   rustKeyword     unsafe virtual where while
+syn keyword   rustKeyword     use nextgroup=rustModPath,rustModPathInUse skipwhite skipempty
 " FIXME: Scoped impl's name is also fallen in this category
 syn keyword   rustKeyword     mod trait struct enum type nextgroup=rustIdentifier skipwhite skipempty
 syn keyword   rustStorage     mut ref static const
@@ -49,6 +49,10 @@ syn region    rustBoxPlacementBalance start="(" end=")" containedin=rustBoxPlace
 syn region    rustBoxPlacementBalance start="\[" end="\]" containedin=rustBoxPlacement transparent
 " {} are handled by rustFoldBraces
 
+syn region rustMacroRepeat matchgroup=rustMacroRepeatDelimiters start="$(" end=")" contains=TOP nextgroup=rustMacroRepeatCount
+syn match rustMacroRepeatCount ".\?[*+]" contained
+syn match rustMacroVariable "$\w\+"
+
 " Reserved (but not yet used) keywords {{{2
 syn keyword   rustReservedKeyword alignof be do offsetof priv pure sizeof typeof unsized yield
 
@@ -61,7 +65,7 @@ syn keyword   rustType        f64 i8 i16 i32 i64 str Self
 " to make it easy to update.
 
 " Core operators {{{3
-syn keyword   rustTrait       Copy Send Sized Share
+syn keyword   rustTrait       Copy Send Sized Sync
 syn keyword   rustTrait       Add Sub Mul Div Rem Neg Not
 syn keyword   rustTrait       BitAnd BitOr BitXor
 syn keyword   rustTrait       Drop Deref DerefMut
@@ -80,12 +84,12 @@ syn keyword   rustEnumVariant Ok Err
 syn keyword rustTrait Ascii AsciiCast OwnedAsciiCast AsciiStr
 syn keyword rustTrait IntoBytes
 syn keyword rustTrait ToCStr
-syn keyword rustTrait Char
+syn keyword rustTrait Char UnicodeChar
 syn keyword rustTrait Clone
 syn keyword rustTrait PartialEq PartialOrd Eq Ord Equiv
 syn keyword rustEnum Ordering
 syn keyword rustEnumVariant Less Equal Greater
-syn keyword rustTrait Collection Mutable Map MutableMap
+syn keyword rustTrait Collection Mutable Map MutableMap MutableSeq
 syn keyword rustTrait Set MutableSet
 syn keyword rustTrait FromIterator Extendable ExactSize
 syn keyword rustTrait Iterator DoubleEndedIterator
@@ -98,18 +102,18 @@ syn keyword rustTrait Box
 syn keyword rustTrait GenericPath Path PosixPath WindowsPath
 syn keyword rustTrait RawPtr
 syn keyword rustTrait Buffer Writer Reader Seek
-syn keyword rustTrait Str StrVector StrSlice OwnedStr
-syn keyword rustTrait IntoMaybeOwned StrAllocating
+syn keyword rustTrait Str StrVector StrSlice
+syn keyword rustTrait IntoMaybeOwned StrAllocating UnicodeStrSlice
 syn keyword rustTrait ToString IntoStr
 syn keyword rustTrait Tuple1 Tuple2 Tuple3 Tuple4
 syn keyword rustTrait Tuple5 Tuple6 Tuple7 Tuple8
 syn keyword rustTrait Tuple9 Tuple10 Tuple11 Tuple12
 syn keyword rustTrait CloneableVector ImmutableCloneableVector
-syn keyword rustTrait MutableCloneableVector MutableOrdVector
-syn keyword rustTrait ImmutableVector MutableVector
-syn keyword rustTrait ImmutableEqVector ImmutableOrdVector
-syn keyword rustTrait Vector VectorVector
-syn keyword rustTrait MutableVectorAllocating
+syn keyword rustTrait MutableCloneableSlice MutableOrdSlice
+syn keyword rustTrait ImmutableSlice MutableSlice
+syn keyword rustTrait ImmutablePartialEqSlice ImmutableOrdSlice
+syn keyword rustTrait Slice VectorVector
+syn keyword rustTrait MutableSliceAllocating
 syn keyword rustTrait String
 syn keyword rustTrait Vec
 
@@ -127,8 +131,9 @@ syn keyword   rustBoolean     true false
 " If foo::bar changes to foo.bar, change this ("::" to "\.").
 " If foo::bar changes to Foo::bar, change this (first "\w" to "\u").
 syn match     rustModPath     "\w\(\w\)*::[^<]"he=e-3,me=e-3
-syn match     rustModPath     "\w\(\w\)*" contained " only for 'use path;'
+syn match     rustModPathInUse "\w\(\w\)*" contained " only for 'use path;'
 syn match     rustModPathSep  "::"
+" rustModPathInUse is split out from rustModPath so that :syn-include can get the group list right.
 
 syn match     rustFuncCall    "\w\(\w\)*("he=e-1,me=e-1
 syn match     rustFuncCall    "\w\(\w\)*::<"he=e-3,me=e-3 " foo::<T>();
@@ -213,8 +218,6 @@ syn keyword rustTodo contained TODO FIXME XXX NB NOTE
 " Trivial folding rules to begin with.
 " TODO: use the AST to make really good folding
 syn region rustFoldBraces start="{" end="}" transparent fold
-" If you wish to enable this, setlocal foldmethod=syntax
-" It's not enabled by default as it would drive some people mad.
 
 " Default highlighting {{{1
 hi def link rustDecNumber       rustNumber
@@ -224,6 +227,9 @@ hi def link rustBinNumber       rustNumber
 hi def link rustIdentifierPrime rustIdentifier
 hi def link rustTrait           rustType
 
+hi def link rustMacroRepeatCount   rustMacroRepeatDelimiters
+hi def link rustMacroRepeatDelimiters   Macro
+hi def link rustMacroVariable Define
 hi def link rustSigil         StorageClass
 hi def link rustEscape        Special
 hi def link rustEscapeUnicode rustEscape
@@ -246,6 +252,7 @@ hi def link rustReservedKeyword Error
 hi def link rustConditional   Conditional
 hi def link rustIdentifier    Identifier
 hi def link rustCapsIdent     rustIdentifier
+hi def link rustModPathInUse  rustModPath
 hi def link rustModPath       Include
 hi def link rustModPathSep    Delimiter
 hi def link rustFunction      Function
