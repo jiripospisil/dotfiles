@@ -1,10 +1,10 @@
 " Shamelessly gathered from all over the internet
-" 
+"
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 " https://github.com/r00k/dotfiles/blob/master/vimrc
 " https://github.com/dmajda/dotfiles/blob/master/.vimrc
 
-set nocompatible 
+set nocompatible
 call pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -17,7 +17,7 @@ let g:clang_auto_select = 2
 let g:clang_complete_auto = 0
 
 if !has('python')
-  echo 'In order to use pymatcher plugin, you need +python compiled vim'
+  echo "In order to use pymatcher plugin, you need +python compiled vim"
 else
   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 endif
@@ -37,7 +37,9 @@ set guioptions-=r
 set guioptions-=L
 set guifont=DejaVu\ Sans\ Mono\ 11
 highlight Cursor guifg=white guibg=#CC0033
-set number             
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+set number
 set relativenumber
 set completeopt-=preview
 
