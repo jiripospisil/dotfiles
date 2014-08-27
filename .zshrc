@@ -30,6 +30,7 @@ export PATH=~/Apps/gpefttools-2.1/bin:$PATH
 export PATH=~/Apps/cmake-3.0.0/bin:$PATH
 export PATH=~/Apps/rust-nightly/bin:$PATH
 export PATH=~/Apps/tmux-1.9a/bin:$PATH
+export PATH=~/Apps/gcc-4.9/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
