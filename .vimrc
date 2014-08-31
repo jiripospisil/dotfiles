@@ -89,6 +89,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+imap <C-c> <ESC>
+
 map <Left> <nop>
 map <Right> <nop>
 map <Up> <nop>
