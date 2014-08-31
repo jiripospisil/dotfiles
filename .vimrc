@@ -124,6 +124,7 @@ map <leader>dr :CtrlP  app/assets/javascripts/routes<cr>
 map <leader>dm :CtrlP  app/assets/javascripts/models<cr>
 
 nmap <leader>s :Ack<space>
+nnoremap <M-]> :YcmCompleter GoTo<CR>
 
 function! RenameFile()
     let old_name = expand('%')
