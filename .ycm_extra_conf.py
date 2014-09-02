@@ -7,7 +7,7 @@ flags = [
   "-std=c++11",
   "-stdlib=libc++",
   "-x", "c++",
-  "-I", ".",
+  "-I", os.getcwd(),
 ]
 
 def DirectoryOfThisScript():
