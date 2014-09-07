@@ -33,12 +33,12 @@ if executable("ag")
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 endif
 
-colorscheme Tomorrow-Night-Bright
+colorscheme hybrid
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
 set guioptions-=L
-set guifont=DejaVu\ Sans\ Mono\ 11
+set guifont=Source\ Code\ Pro\ Medium\ 12
 highlight Cursor guifg=white guibg=#CC0033
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
