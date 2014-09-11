@@ -154,6 +154,7 @@ autocmd FileType c,cpp,objc nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
 
 autocmd BufNewFile,BufRead *.md setlocal spell
+autocmd BufRead /usr/include/c++/* set syntax=cpp
 
 autocmd BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.hpp,*.rs :%s/\s\+$//e
 
