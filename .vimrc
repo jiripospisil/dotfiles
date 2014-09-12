@@ -19,6 +19,9 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_key_list_select_completion = []
 let g:ycm_key_list_previous_completion = []
 
+let g:UltiSnipsExpandTrigger="<M-m>"
+let g:UltiSnipsJumpForwardTrigger="<M-n>"
+
 if !has('python')
   echo "In order to use pymatcher plugin, you need +python compiled vim"
 else
