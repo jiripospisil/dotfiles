@@ -8,6 +8,7 @@ flags = [
   "-stdlib=libc++",
   "-x", "c++",
   "-I", os.getcwd(),
+  "-I", os.getcwd() + "/include",
 ]
 
 def DirectoryOfThisScript():
