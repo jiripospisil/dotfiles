@@ -5,6 +5,7 @@ flags = [
   "-Wall",
   "-Wextra",
   "-std=c++11",
+  "-pedantic",
   "-stdlib=libc++",
   "-x", "c++",
   "-I", os.getcwd(),
