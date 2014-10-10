@@ -26,3 +26,7 @@
 	fxx = !sh -c 'git commit --fixup=HEAD' -
 	sq = !sh -c 'git commit --squash=$1' -
 	ri = rebase --interactive --autosquash
+[advice]
+	statusHints = false
+[branch]
+	autosetupmerge = true
