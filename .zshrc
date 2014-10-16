@@ -31,6 +31,7 @@ export PATH=~/Apps/cmake-3.0.2/bin:$PATH
 export PATH=~/Apps/rust-nightly/bin:$PATH
 export PATH=~/Apps/tmux-1.9a/bin:$PATH
 export PATH=~/Apps/gcc-4.9/bin:$PATH
+export PATH=~/Apps/vim-20141014/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
@@ -69,8 +70,8 @@ alias gcls="git clone --depth 1"
 alias gbd="git branch -d"
 alias gbD="git branch -D"
 
-alias vi=/home/tux/Apps/vim-20141014/bin/vim
-alias gi=/home/tux/Apps/vim-20141014/bin/gvim
+alias vi="vim"
+alias gi="gvim"
 alias gii="gi -u ~/.vimrc_tabs"
 
 stty -ixon -ixoff
