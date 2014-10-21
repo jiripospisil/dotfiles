@@ -31,6 +31,7 @@ endif
 let g:ctrlp_lazy_update = 200
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 0
+
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
@@ -159,7 +160,7 @@ autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
 autocmd BufNewFile,BufRead *.md setlocal spell
 autocmd BufRead /usr/include/c++/* set syntax=cpp
 
-autocmd BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.hpp,*.rs :%s/\s\+$//e
+autocmd BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.c,*.hpp,*.rs :%s/\s\+$//e
 
 " http://blog.sanctum.geek.nz/vim-command-typos/
 if has("user_commands")
