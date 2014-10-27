@@ -160,7 +160,7 @@ autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
 autocmd BufNewFile,BufRead *.md setlocal spell
 autocmd BufRead /usr/include/c++/* set syntax=cpp
 
-autocmd BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.c,*.hpp,*.rs :%s/\s\+$//e
+autocmd BufWritePre *.rb,*.css,*.scss,*.slim,*.js,*.coffee,*.yml,*.pp,*.emblem,*.md,*.h,*.cc,*.c,*.hpp,*.rs,*.proto :%s/\s\+$//e
 
 " http://blog.sanctum.geek.nz/vim-command-typos/
 if has("user_commands")
