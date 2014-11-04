@@ -176,4 +176,3 @@ if has("user_commands")
 endif
 
 set formatoptions-=or
-set path=.
