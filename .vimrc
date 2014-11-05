@@ -65,7 +65,6 @@ set backupdir=~/.vim/backup
 set nofoldenable
 set shiftround
 set timeoutlen=500
-set autochdir
 
 set nowrap
 set textwidth=80
@@ -176,3 +175,4 @@ if has("user_commands")
 endif
 
 set formatoptions-=or
+set path=.
