@@ -129,6 +129,11 @@ map <leader>dm :CtrlP  app/assets/javascripts/models<cr>
 nmap <leader>s :Ack<space>
 nnoremap <M-]> :YcmCompleter GoTo<CR>
 
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+
 function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
