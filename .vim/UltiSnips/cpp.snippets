@@ -13,3 +13,15 @@ endsnippet
 snippet crbe "crb/cre range" w
 std::crbegin(${1}), std::crend(${2:$1})
 endsnippet
+
+snippet main
+int main(int argc, const char** argv)
+{
+	${1}
+	return 0;
+}
+endsnippet
+
+snippet vec
+std::vector<${1:int}> ${2:kk}
+endsnippet
