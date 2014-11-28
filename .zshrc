@@ -31,7 +31,7 @@ export PATH=~/Apps/cmake-3.0.2/bin:$PATH
 export PATH=~/Apps/rust-nightly/bin:$PATH
 export PATH=~/Apps/tmux-1.9a/bin:$PATH
 export PATH=~/Apps/gcc-4.9/bin:$PATH
-export PATH=~/Apps/vim-20141120/bin:$PATH
+export PATH=~/Apps/vim-20141128/bin:$PATH
 export PATH=~/Apps/ffmpeg-2.4.3:$PATH
 export PATH=~/Apps/giflossy/bin:$PATH
 
