@@ -126,7 +126,8 @@ map <leader>dc :CtrlP  app/assets/javascripts/controllers<cr>
 map <leader>dr :CtrlP  app/assets/javascripts/routes<cr>
 map <leader>dm :CtrlP  app/assets/javascripts/models<cr>
 
-nmap <leader>s :Ack<space>
+nmap <leader>ss :Ack<space>
+nmap <leader>sr :Ack --ruby<space>
 nnoremap <M-]> :YcmCompleter GoTo<CR>
 
 nmap <Leader>a= :Tabularize /=<CR>
