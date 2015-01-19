@@ -162,6 +162,7 @@ imap <C-M-BS> <esc>:wq<CR>
 
 autocmd FileType c,cpp,objc nnoremap <buffer><C-e> :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><C-e> :ClangFormat<CR>
+autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 autocmd BufNewFile,BufRead *.md setlocal spell
 autocmd BufRead /usr/include/c++/* set syntax=cpp
