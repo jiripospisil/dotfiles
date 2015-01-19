@@ -34,6 +34,7 @@ export PATH=~/Apps/gcc-4.9/bin:$PATH
 export PATH=~/Apps/vim-20150109/bin:$PATH
 export PATH=~/Apps/ffmpeg-2.4.3:$PATH
 export PATH=~/Apps/giflossy/bin:$PATH
+export PATH=~/Apps/phantomjs-1.9.8-linux-x86_64/bin:$PATH
 
 export NODE_PATH=$NODE_PATH:/home/tux/Local/lib/node_modules
 
