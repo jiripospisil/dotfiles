@@ -13,7 +13,7 @@ fi
 
 export EDITOR="vim"
 export PATH=~/Local/bin:$PATH
-export GOROOT=~/Apps/go
+export GOROOT=~/Apps/go-1.4.2
 export PATH=$GOROOT/bin:$PATH
 export PATH=~/Apps/gradle-2.0/bin:$PATH
 export PATH=~/Apps/sbt/bin:$PATH
