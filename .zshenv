@@ -25,6 +25,10 @@ marks() {
   ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 
+tp() {
+  echo /tmp/tp-$(date +%Y%m%d%H%M%S)
+}
+
 ttp() {
-  take /tmp/tp-$(date +%Y%m%d%H%M%S)-$1
+  take $(tp)
 }
