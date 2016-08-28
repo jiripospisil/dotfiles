@@ -90,3 +90,5 @@ m() {
 }
 
 stty -ixon -ixoff
+
+source $HOME/.nvm/nvm.sh
