@@ -85,4 +85,8 @@ alias vi="vim"
 alias gi="gvim"
 alias gii="gi -u ~/.vimrc_tabs"
 
+m() {
+  NODE_ENV=test node_modules/.bin/mocha -g $1
+}
+
 stty -ixon -ixoff
