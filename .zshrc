@@ -85,6 +85,10 @@ alias vi="vim"
 alias gi="gvim"
 alias gii="gi -u ~/.vimrc_tabs"
 
+e() {
+  nohup emacsclient -a '' -c $@ > /tmp/emacs-$(date +%Y%m%d%H%M%S) 2>&1 &
+}
+
 m() {
   NODE_ENV=test node_modules/.bin/mocha -g $1
 }
