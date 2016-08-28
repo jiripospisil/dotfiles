@@ -6,6 +6,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
+setopt menu_complete
 
 if [[ $COLORTERM == "gnome-terminal" && $TERM =~ xterm.* ]]; then
     export TERM=xterm-256color
