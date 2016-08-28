@@ -126,7 +126,11 @@ console.info(${1:"${2:value}"});
 endsnippet
 
 snippet cl "console.log" b
-console.log(${1:"${2:value}"});
+console.log(${1:'${2:value}'});
+endsnippet
+
+snippet clv "console.log" b
+console.log('============ ${1}', $1);
 endsnippet
 
 snippet cd "console.debug" b
