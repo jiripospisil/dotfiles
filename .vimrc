@@ -37,12 +37,12 @@ if executable("ag")
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 endif
 
-colorscheme hybrid
+colorscheme onedark
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
 set guioptions-=L
-set guifont=Source\ Code\ Pro\ Medium\ 12
+set guifont=Source\ Code\ Pro\ Medium\ 13
 highlight Cursor guifg=white guibg=#CC0033
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
@@ -109,6 +109,7 @@ map <leader>f :CtrlP <CR>
 map <leader>gf :CtrlP %%<CR>
 map <leader>b :CtrlPBuffer <CR>
 map <leader>t :CtrlPTag <CR>
+map <leader>r :CtrlPMRU <CR>
 
 map <leader>gv :CtrlP  app/views<CR>
 map <leader>gc :CtrlP  app/controllers<CR>
@@ -185,3 +186,21 @@ endif
 
 set formatoptions-=or
 set path=.
+
+function! <SID>SetMainDefaults()
+  " your default options goes here!
+  set tabstop=2
+  set shiftwidth=2
+  set expandtab
+
+endfunction
+
+call <SID>SetMainDefaults()
+
+" initialize vimprj plugin
+call vimprj#init()
+
+" define a hook
+function! g:vimprj#dHooks['SetDefaultOptions']['main_options'](dParams)
+  call <SID>SetMainDefaults()
+endfunction
