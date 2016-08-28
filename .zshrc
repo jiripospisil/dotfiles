@@ -79,6 +79,7 @@ alias gcl="git clone"
 alias gcls="git clone --depth 1"
 alias gbd="git branch -d"
 alias gbD="git branch -D"
+alias gprune='git branch --merged | grep -Ev "(\*|master|develop|qa|staging|next|feature/next)" | xargs -n 1 git branch -d'
 
 alias vi="vim"
 alias gi="gvim"
