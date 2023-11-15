@@ -1,0 +1,32 @@
+theme = "nightfox"
+
+[editor]
+true-color = true
+# auto-save = true
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.insert]
+"C-backspace" = ["normal_mode", ":wa"]
+
+[keys.normal]
+"C-j" = ["goto_next_paragraph"]
+"C-k" = ["goto_prev_paragraph"]
+"C-backspace" = ":wa"
+"C-h" = "jump_view_left"
+"C-l" = "jump_view_right"
+"pageup" = "expand_selection"
+"pagedown" = "shrink_selection"
+"D" = ["extend_to_line_bounds", "trim_selections", "delete_selection"]
+
+[keys.normal.space]
+"space" = "goto_last_accessed_file"
+"H" = ":toggle lsp.display-inlay-hints"
+"q" = ":reflow"
+
+[keys.select]
+"C-j" = ["goto_next_paragraph"]
+"C-k" = ["goto_prev_paragraph"]
+

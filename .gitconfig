@@ -1,0 +1,16 @@
+[core]
+	editor = "nvim"
+[user]
+	email = jiri@jpospisil.com
+	name = Jiri Pospisil
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILKleO642HS7NPXR7271lRTDLdetlqeTkt4PKe3ekwGS
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[push]
+	default = current
+[init]
+	defaultBranch = master
+[diff]
+	algorithm = histogram
