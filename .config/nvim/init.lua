@@ -114,7 +114,9 @@ require("lazy").setup {
         bind("n", "<leader>o", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
       end)
 
-      require("lspconfig").rust_analyzer.setup({
+      local lspconfig = require("lspconfig")
+
+      lspconfig.rust_analyzer.setup({
         settings = {
           ["rust-analyzer"] = {
             cargo = {
@@ -123,6 +125,8 @@ require("lazy").setup {
           },
         },
       })
+
+      lspconfig.zls.setup({})
     end,
   },
 
@@ -133,3 +137,12 @@ require("lazy").setup {
     end,
   },
 }
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = {"*"},
+  callback = function()
+    local save_cursor = vim.fn.getpos(".")
+    pcall(function() vim.cmd [[%s/\s\+$//e]] end)
+    vim.fn.setpos(".", save_cursor)
+  end,
+})

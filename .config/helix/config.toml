@@ -17,8 +17,6 @@ insert = "bar"
 "C-backspace" = ":wa"
 "C-h" = "jump_view_left"
 "C-l" = "jump_view_right"
-"pageup" = "expand_selection"
-"pagedown" = "shrink_selection"
 "D" = ["extend_to_line_bounds", "trim_selections", "delete_selection"]
 
 [keys.normal.space]
@@ -29,4 +27,3 @@ insert = "bar"
 [keys.select]
 "C-j" = ["goto_next_paragraph"]
 "C-k" = ["goto_prev_paragraph"]
-
