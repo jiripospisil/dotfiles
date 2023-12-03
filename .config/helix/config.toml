@@ -1,9 +1,9 @@
-theme = "nightfox"
+theme = "everforest_dark"
 
 [editor]
 true-color = true
 # auto-save = true
-line-number = "relative"
+# line-number = "relative"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,12 +12,17 @@ insert = "bar"
 "C-backspace" = ["normal_mode", ":wa"]
 
 [keys.normal]
-"C-j" = ["goto_next_paragraph"]
-"C-k" = ["goto_prev_paragraph"]
+"C-j" = ["goto_next_paragraph", "extend_to_line_bounds"]
+"C-k" = ["goto_prev_paragraph", "extend_to_line_bounds"]
 "C-backspace" = ":wa"
 "C-h" = "jump_view_left"
 "C-l" = "jump_view_right"
-"D" = ["extend_to_line_bounds", "trim_selections", "delete_selection"]
+"D" = ["kill_to_line_end"]
+"C" = ["kill_to_line_end", "insert_mode"]
+"A-c" = ["copy_selection_on_next_line"]
+X = ["extend_line_up", "extend_to_line_bounds"]
+a = ["append_mode", "collapse_selection"]
+i = ["insert_mode", "collapse_selection"]
 
 [keys.normal.space]
 "space" = "goto_last_accessed_file"
@@ -25,5 +30,10 @@ insert = "bar"
 "q" = ":reflow"
 
 [keys.select]
-"C-j" = ["goto_next_paragraph"]
-"C-k" = ["goto_prev_paragraph"]
+"C-j" = ["goto_next_paragraph", "extend_to_line_bounds"]
+"C-k" = ["goto_prev_paragraph", "extend_to_line_bounds"]
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+[editor.statusline]
+right = ["diagnostics", "selections", "position","position-percentage", "file-encoding"]
+
