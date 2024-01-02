@@ -1,12 +1,16 @@
-theme = "everforest_dark"
+theme = "github_dark_dimmed"
 
 [editor]
 true-color = true
 # auto-save = true
 # line-number = "relative"
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
+
+[editor.statusline]
+right = ["diagnostics", "selections", "position","position-percentage", "file-encoding"]
 
 [keys.insert]
 "C-backspace" = ["normal_mode", ":wa"]
@@ -23,17 +27,16 @@ insert = "bar"
 X = ["extend_line_up", "extend_to_line_bounds"]
 a = ["append_mode", "collapse_selection"]
 i = ["insert_mode", "collapse_selection"]
+"{" = ":buffer-previous"
+"}" = ":buffer-next"
 
 [keys.normal.space]
 "space" = "goto_last_accessed_file"
 "H" = ":toggle lsp.display-inlay-hints"
 "q" = ":reflow"
+"l" = ":reload-all"
 
 [keys.select]
 "C-j" = ["goto_next_paragraph", "extend_to_line_bounds"]
 "C-k" = ["goto_prev_paragraph", "extend_to_line_bounds"]
 X = ["extend_line_up", "extend_to_line_bounds"]
-
-[editor.statusline]
-right = ["diagnostics", "selections", "position","position-percentage", "file-encoding"]
-
