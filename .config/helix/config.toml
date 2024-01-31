@@ -14,11 +14,13 @@ right = ["diagnostics", "selections", "position","position-percentage", "file-en
 
 [keys.insert]
 "C-backspace" = ["normal_mode", ":wa"]
+"C-s" = ["normal_mode", ":wa"]
 
 [keys.normal]
 "C-j" = ["goto_next_paragraph", "extend_to_line_bounds"]
 "C-k" = ["goto_prev_paragraph", "extend_to_line_bounds"]
 "C-backspace" = ":wa"
+"C-s" = ":wa"
 "C-h" = "jump_view_left"
 "C-l" = "jump_view_right"
 "D" = ["kill_to_line_end"]

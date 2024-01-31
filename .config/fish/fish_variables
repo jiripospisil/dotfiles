@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export COLORTERM:truecolor
 SETUVAR --export EDITOR:helix
 SETUVAR --export GEM_HOME:/home/bob/\x2elocal/share/gem/ruby/3\x2e0\x2e0
 SETUVAR --export --path RIPGREP_CONFIG_PATH:/home/bob/\x2eripgreprc
@@ -34,4 +35,4 @@ SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_prompt_pwd_dir_length:20
-SETUVAR fish_user_paths:/home/bob/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/usr/lib/rustup/bin\x1e/home/bob/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/bob/\x2enpm_prefix/bin\x1e/home/bob/\x2elocal/share/gem/ruby/3\x2e0\x2e0/bin\x1e/usr/lib/rustup/bin\x1e/home/bob/\x2ecargo/bin

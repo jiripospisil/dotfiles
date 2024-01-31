@@ -1,4 +1,3 @@
--- Basic key bindings
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-BS>", "<cmd>wa<cr>", { silent = true })
 vim.keymap.set("i", "<C-BS>", "<Esc><cmd>wa<cr>", { silent = true })
@@ -10,7 +9,12 @@ vim.keymap.set("n", "<C-J>", "<C-w>j<cr>", { silent = true })
 vim.keymap.set("n", "<C-K>", "<C-w>k<cr>", { silent = true })
 vim.keymap.set("n", "<C-L>", "<C-w>l<cr>", { silent = true })
 
--- Options
+vim.keymap.set({ "n", "v" }, "<C-J>", "}", { silent = true })
+vim.keymap.set({ "n", "v" }, "<C-K>", "{", { silent = true })
+vim.keymap.set("n", "d<C-J>", "d}", { silent = true })
+vim.keymap.set("n", "d<C-K>", "d{", { silent = true })
+vim.keymap.set("i", "<C-D>", "<del>", { silent = true })
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -32,7 +36,10 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.signcolumn = "no"
 
--- vim.lsp.set_log_level('debug')
+vim.g.neovide_cursor_animation_length = 0
+vim.g.neovide_scroll_animation_length = 0
+
+--vim.lsp.set_log_level('debug')
 
 -- Lazy.vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -60,6 +67,15 @@ require("lazy").setup {
   "tpope/vim-surround",
   "tpope/vim-repeat",
   "tpope/vim-unimpaired",
+
+  {
+    "ojroques/nvim-osc52",
+    config = function()
+      vim.keymap.set("n", "<leader>y", require("osc52").copy_operator, {expr = true})
+      vim.keymap.set("n", "<leader>yy", "<leader>c_", {remap = true})
+      vim.keymap.set("v", "<leader>y", require("osc52").copy_visual)
+    end,
+  },
 
   {
     "nvim-telescope/telescope.nvim",
@@ -105,13 +121,17 @@ require("lazy").setup {
       local lsp_zero = require("lsp-zero")
 
       lsp_zero.on_attach(function(client, bufnr)
+        client.server_capabilities.semanticTokensProvider = nil
+
         local opts = {buffer = bufnr}
         local bind = vim.keymap.set
 
         lsp_zero.default_keymaps(opts)
-        bind("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+        bind("n", "<leader>m", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+        bind("n", "<leader>r", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
         bind("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
         bind("n", "<leader>o", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+        bind("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
       end)
 
       local lspconfig = require("lspconfig")
@@ -137,6 +157,7 @@ require("lazy").setup {
     end,
   },
 }
+
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = {"*"},
