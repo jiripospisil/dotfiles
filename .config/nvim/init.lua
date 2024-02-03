@@ -14,6 +14,11 @@ vim.keymap.set({ "n", "v" }, "<C-K>", "{", { silent = true })
 vim.keymap.set("n", "d<C-J>", "d}", { silent = true })
 vim.keymap.set("n", "d<C-K>", "d{", { silent = true })
 vim.keymap.set("i", "<C-D>", "<del>", { silent = true })
+vim.keymap.set({ "n", "i", "t" }, "<C-Q>", "<C-\\><C-N><cmd>q<cr>", { silent = true })
+
+vim.keymap.set("t", "<C-O>", "<C-\\><C-N><C-w>h", { silent = true })
+vim.keymap.set("n", "<leader>C", "<cmd>vsp<cr><C-W>l<cmd>term<cr>", { silent = true })
+vim.keymap.set("n", "<leader>c", "<cmd>term<cr>", { silent = true })
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -60,6 +65,7 @@ require("lazy").setup {
     "EdenEast/nightfox.nvim",
     config = function()
       vim.cmd("colorscheme nightfox")
+      vim.cmd("hi! link CurSearch Search")
     end,
   },
 
@@ -72,9 +78,14 @@ require("lazy").setup {
     "ojroques/nvim-osc52",
     config = function()
       vim.keymap.set("n", "<leader>y", require("osc52").copy_operator, {expr = true})
-      vim.keymap.set("n", "<leader>yy", "<leader>c_", {remap = true})
+      vim.keymap.set("n", "<leader>yy", "<leader>y_", {remap = true})
       vim.keymap.set("v", "<leader>y", require("osc52").copy_visual)
     end,
+  },
+
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make"
   },
 
   {
@@ -93,8 +104,16 @@ require("lazy").setup {
               ["<Esc>"] = "close",
             },
           },
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+          }
         }
       })
+
+      require("telescope").load_extension("fzf")
 
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>f", builtin.find_files, {})
@@ -166,4 +185,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pcall(function() vim.cmd [[%s/\s\+$//e]] end)
     vim.fn.setpos(".", save_cursor)
   end,
+})
+
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter", "WinEnter" }, {
+  pattern = "term://*",
+  callback = vim.schedule_wrap(function ()
+    vim.cmd.startinsert()
+  end),
 })
